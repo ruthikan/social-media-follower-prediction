@@ -173,6 +173,26 @@ print("\n📈 Prediction Results:")
 print(f"→ Predicted Number of Followers: {int(predicted_followers)}")
 print(f"→ You are a: {cluster_name}")
 
+"""##**Likes Predicting Model**"""
+# Step 4: Feature & Target Selection
+x = df[['avg_likes', 'new_post_avg_like', 'posts', '60_day_eng_rate']]  # Independent variables
+Y = df['total_likes']  # 🎯 Target column — replace with your actual likes column name
+
+# Step 5: Split Data
+x_train, x_test, Y_train, Y_test = train_test_split(x, Y, test_size=0.2, random_state=42)
+
+# Step 6: Train Model
+likes_model = RandomForestRegressor(n_estimators=100, random_state=42)
+likes_model.fit(x_train, Y_train)
+
+# Step 7: Evaluate
+Y_pred = likes_model.predict(x_test)
+r2 = r2_score(Y_test, Y_pred)
+print(f"R² Score: {r2 * 100:.2f}%")
+
+with open('likes_model.pkl', 'wb') as file:
+    pickle.dump(likes_model, file)
+    
 """##**Saving Model**"""
 
 with open("regression_model.pkl", "wb") as f:
