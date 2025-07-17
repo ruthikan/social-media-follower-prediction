@@ -1,6 +1,6 @@
 # 📱 Social Media Followers Prediction
 
-This project predicts the **future follower count** of a social media account based on engagement metrics and clusters the account into influencer categories such as *Micro, Mid-tier, or Celebrity*. It combines **Regression**, **Clustering**, and **Streamlit-based Web App Deployment** for interactive user predictions.
+This project predicts the **predict the future follower count and average likes** of a social media account based on engagement metrics and clusters the account into influencer categories such as *Micro, Mid-tier, or Celebrity*. It combines **Regression**, **Clustering**, and **Streamlit-based Web App Deployment** for interactive user predictions.
 
 ---
 
@@ -14,11 +14,13 @@ With the rise of influencer marketing, understanding audience growth has become 
 ---
 
 ## 📊 Features
-- Predict future followers using **Random Forest Regressor**.
-- Cluster influencers using **KMeans Clustering**.
-- Calculate **60-day engagement rate** from user input.
-- Deploy model using **Streamlit** for public use.
-- Visualize trends using **Bar chart**, **Pie chart**, **Treemap**, **Histogram**, and **Heatmap**.
+
+- Predict **followers and likes** for next 1 to 5 years 📈
+- Classify into **influencer tiers** using clustering
+- Calculate **60-day engagement rate**
+- Suggest improvements based on input stats
+- Interactive **Streamlit web app** with clean UI
+- Includes **data visualizations** (bar, pie, and others)
 
 ---
 
@@ -78,15 +80,16 @@ With the rise of influencer marketing, understanding audience growth has become 
 ## 📁 Project Structure
 
 ```bash
-├── streamlit_app.py                # Streamlit frontend
+├── streamlit_app.py                # Streamlit frontend with interactive UI
 ├── model_training.py               # ML model training code
-├── regression_model.pkl            # Saved regression model
-├── kmeans_model.pkl                # Saved clustering model
-├── scaler.pkl                      # Scaler used during training
-├── dataset/                        # Contains original dataset
-├── visuals/                        # Screenshots or plot exports
-├── README.md                       # Project documentation
-└── requirements.txt                # Python dependencies
+├── regression_model.pkl            # Saved regression model for followers
+├── likes_model.pkl                 # Saved regression model for likes
+├── kmeans_model.pkl                # Clustering model for influencer type
+├── scaler.pkl                      # Scaler for transforming input data
+├── dataset/                        # Contains original dataset (.csv)
+├── visuals/                        # Screenshots or generated plots
+├── requirements.txt                # Python dependencies
+└── README.md                       # Project documentation
 ```
 ---
 
@@ -107,7 +110,3 @@ AI & Machine Learning Enthusiast | Final Year Engineering Student<br>
 ## ⭐ Acknowledgements
 - Special thanks to Blackbucks Internship Program and Streamlit Community Cloud.
 - Dataset courtesy: Kaggle - top_insta_influencers_data.
-
-
-
-
